@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - uri:
+        url: https://localhost:9999/authenticate
+        client_cert: alice_cert.pem
+        client_key: alice_key.pem
+        method: GET
+        status_code: 200
+        validate_certs: false
+
